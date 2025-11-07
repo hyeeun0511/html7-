@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='button']{background: #efefef; width:100px; height:40px;
+          border:1px solid #b4b4b4;
+        }
+        input[type='button']:hover{background: #ffc5c5;
+        border:1px solid #c54444;
+        }
+    </style>>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <!-- autofocus : 실행시 커서를 자동이동 -->
+    <!-- placeholder : 입력창 도움말 -->
+    <!-- readonly : 입력,수정이 안됨 -->
+    <!-- required : 필수입력 -->
+    <form action="#" method="get">
+        <label>아이디</label>
+        aaa<br>
+        <!-- <input type="text" name="id" value="admin" readonly ><br> -->
+        <label>패스워드</label>
+        <input tyoe="password" name="pw"autofocus required><span>* 8자리이상</span><br>
+        <label>패스워드확인</label>
+        <input type="password" name="pw2" ><br>
+        <label>이름</label>
+        <input type="text" name="name"><br>
+        <label>성별</label><br>  <!-- ex) gendet='여자' -->
+        <input type="radio" checked id="man" name="gender" value="남자">
+        <label for="man">남자</label>
+        <input type="radio" id="woman" name="gender" value="여자">
+        <label for="woman">여자</label>
+        <input type="radio" id="neuter" name="gender" value="중성">
+        <label for="neuter">중성</label>
+        <br>
+        <label>취미</label><br>  <!-- ex) hobby[0]='게임' hobby[1]='골프' -->
+        <!--radio,checkbox 먼저 선택 : checked -->
+        <input type="checkbox" checked id="game" name="hobby" value="게임">
+        <label for="game">게임</label>
+        <input type="checkbox" id="golf" name="hobby" value="골프">
+        <label for="golf">골프</label>
+        <input type="checkbox" id="swim" name="hobby" value="수영">
+        <label for="swim">수영</label>
+        <input type="checkbox" id="run" name="hobby" value="조깅">
+        <label for="run">조깅</label>
+        <br>
+        <select name="major">
+            <option value="#">과를 선택</option>
+            <option value="com">컴퓨터공학</option>
+            <option value="elect" selected>전자공학</option>
+            <option value="history">역사학</option>
+        </select>
+
+        <br>
+        <label>달력</label>
+        <!-- date, month, week, time(시간), datetime-local(날짜,시간) -->
+        <input type="datetime-local" name="daytime">
+        <br>
+        <input type="file" name="nfile">
+        <br>
+        <!-- cols: 옆으로 글자입력 가능 개수 , rows: 하단으로 글자입력 가능 개수 -->
+        <textarea name="content" cols="40" rows="15"></textarea>
+        <br>
+        <input type="button" value="회원가입">
+        <input type="reset" value="취소지우기">
+        
+
+    </form>
+</body>
+</html>
