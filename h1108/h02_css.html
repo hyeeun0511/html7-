@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        /* 선택자 : 0.인라인선택자(body안에 style을 넣어주는것_웬만하면 사용X) 1.id선택자 2.class선택자 3.태그선택자 4.전체선택자 */
+        /* 전체선택자 */
+        /* 여백:숫자 들어가면 px 꼭 써줘야함 */
+        *{padding:0; margin:0;}
+        /* 태그선택자 */
+        h1{color:blue;}
+        p{font-size:20px;}
+        /* 클래스선택자 - 여러곳 적용할때 사용하는 선택자*/
+        .c_all{background:yellow;}
+        /* id 선택자 - 유일한 곳에 적용할때 사용하는 선택자 - 1개만 적용 가능 */
+        #tit{color:red;}
+        span{color:green;}
+    </style>
+</head>
+<body>
+    <!-- class : (그 위치의)주소값 -->
+    <h1 id="tit">구분 : IT과학 뉴스기사</h1>
+    <h1 class="c_all">李대통령 “T1, 롤드컵 3연패 축하…역사에 남을 쾌거”</h1>
+    <p><span>[헤럴드경제=서영상 기자]</span> 이재명 대통령이 리그 오브 레전드(LoL) 월드 챔피언십 대회(롤드컵)에서 ‘페이커’ 이상혁 선수가 이끄는 한국팀 T1이 사상 첫 3연패를 달성한 것을 놓고 “역사에 길이 남을 쾌거”라며 축하 인사를 전했다.</p>
+    <hr>
+    <h1>KT 해커, 인증정보 탈취 가능성…통화문자 수집 위험까지</h1>
+    <p class="c_all">KT 해킹 사고를 조사하는 민관 합동조사단은 지난 6일 중간 조사 브리핑에서 해커들이 펨토셀을 조작해 자동응답방식(ARS), 문자메시지(SMS) 등 소액결제 인증정보를 탈취했을 가능성을 제기했다.</p>
+    <hr>
+    <h1>암 전이 열쇠 ‘세포 이동 프로그램’ KAIST가 풀었다</h1>
+    <p class="c_all">[데일리안 = 배군득 기자] 우리 몸속에서 세포는 상처 치유와 면역 반응, 그리고 암 전이 같은 다양한 생명현상을 수행하기 위해 이동한다. 그러나 그동안 세포가 별도의 외부 신호 없이 스스로 이동 방향을 결정하는 내적 원리는 명확히 밝혀지지 않았다.
+</p>
+</body>
+</html>

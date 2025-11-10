@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 ㅣ 리솜리조트</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{padding:0; margin:0; color:#333;}
+        div{width:600px; margin:0 auto;}
+        /* font-size:글자크기 */
+        h3{ font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing:auto;font-weight:600;font-style: normal;
+          font-size:40px; text-align: center;
+          margin-top:40px; margin-bottom:15px;
+        }
+        h4{font-size:22px; font-weight:500; margin-top:70px;
+            margin-bottom:30px;
+        }
+        span{font-size: 16px; color:#96694c;}
+        ul{list-style: none; font-size: 16px; text-align: center;
+            /* difplay:flex; -> 세로로 나열돼있는것을 가로로 정렬해줌 */
+            /* justify-content: space-between -> 사이간격을 일정하게 해줌*/
+            display: flex; justify-content: space-between;}
+            li{width:130px; height:57px; border:1px solid #ddd;
+              line-height: 55px;font-size: 16px;
+            }
+        ul:hover{text-overflow: clip;}                                        /*???????????????????????????????????????????????*/
+        /*#b{color:#96694c;}*/
+        h5{font-size: 16px; font-weight: 450; margin-top:60px;}
+        input[type='blank']{background: #ffffff; width:600px; height:50px;
+          border:1px solid #ddd; margin-top:10px;
+        }
+        p{font-size:14px; color:#555555;}
+        h6{font-size: 16px; font-weight: 450; margin-top:20px;}
+        h4{font-size: 16px; font-weight: 450; margin-top:20px;}
+        input[type='bk']{background: #efefef; width:600px; height:50px;
+          border:1px solid #ddd; margin-top:10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h3>회원가입</h3>
+        <!-- div: 사각형태두리(넓이 조절 가능) -->
+        <!-- span: 사각형태두리(넓이 조절 불가능) -->
+        <h4>회원정보<span>(* 필수입력)</span></h4>
+
+        <ul>
+            <li>분양</li>
+            <li>사이버</li>
+            <li>임직원</li>
+            <li>MOU</li>
+        </ul>
+        
+        <h5><span>*</span> 아이디</h5>
+        <input type="blank" name="id"autofocus required>
+        <p>- 4~16자리의 영문 소문자, 숫자, 특수기호( _ )만 사용</p>
+        <p>- 첫 글자는 영문으로 입력</p>
+        
+        <h6><span>*</span> 비밀번호</h6>
+        <input type="blank" name="password"autofocus required>
+        <p>- 최소 10글자 이상 소문자, 대문자, 숫자, 특수문자를 포함해야 됩니다.</p>
+        <p>- 가능한 특수문자 : <span>{}[]/?.,;:)(*~`!^-_+<>@#$%&=</span></p>
+        
+        <h6><span>*</span> 비밀번호 확인</h6>
+        <input type="blank" name="password check"autofocus required>
+        
+        <h4><span>*</span> 이름(실명인증 필요)</h4>
+        <input type="bk" name="name"autofocus required>
+
+        <h4><span>*</span> 휴대폰 번호</h4>
+        <input type="bk" name="name"autofocus required>
+        
+    </div>
+    
+</body>
+</html>
