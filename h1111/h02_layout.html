@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        *{padding:0; margin:0;}
+        span,div{border:1px solid black;}
+        span{width:200px; height:100px; display: inline-block;} /*inline-block : 배치는 옆으로 하고 크기 조절 가능*/
+        div{width:50%; height:100px; margin:30px;   /*선두께도 포함됨*/
+            box-sizing: border-box;
+        }
+        #s02{display: none;} /*none : 없어짐*/
+        #d02:hover{display: none;}
+    </style>
+</head>
+<body>
+    <a>111</a>
+    <a>222</a>
+    <a>333</a>
+    <span>1</span>
+    <span id="s02">2</span>
+    <span>3</span>
+    <div>11</div>
+    <br>
+    <div id="d02">22</div>
+    <br>
+    <div>33</div>
+</body>
+</html>
+
+<!-- 중요!!
+
+[블록요소]
+ 1. width,height 지정 가능
+ 2. 옆공간이 있어도 무조건 하단배치
+     - display:inline, inline-block
+
+ [인라인요소]
+ 1. img, span, form, a(앵커태그), strong
+ 2. width,height 지정 불가능
+ 3. 하단배치하려면 블록요소로 바꿔야함
+     - display:block, inline-block
+
+     -> [인라인블록요소지정] : width,height지정 가능, 옆으로 배치
+     - display:inline-block 
+ -->
