@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding:0;}
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');  /*글씨체-google fonts*/
+        .media{width:100%; height:700px; border:1px solid red;
+            overflow:hidden; /*영상크기는 그대로이지만 밑에 부분만 잘림->영상 크기가 줄어드는 것이 아님*/
+        }
+        video{width:100%; height: 900px; object-fit: cover;}
+        h2{position: absolute; top:250px; right: 100px;
+            font-size:5.0rem; /*1em:16px*/ color: white; font: weight 700;
+            line-height:90%; letter-spacing: -0.51rem;/* letter-spacing : 자간 */
+            text-align: right; /* 우측정렬 */
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="media">
+        <video src="img/영상.mp4" autoplay muted loop></video> <!-- autoplay muted:바로 실행됨 / loop:무한재생 /  controls:실행바가 생김 -->
+    </div>
+    <h2>Connection the<br> Future with Light</h2>
+</body>
+</html>

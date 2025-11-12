@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        *{padding:0; margin:0; list-style:none;}
+        #main{width:700px; height: 200px; border:1px solid black;
+            margin:100px;
+            background: #eee;
+            display: flex;  /*옆으로 배치(주축형태로 바뀜) --display를 붙여야 모든 브라우저에 적용이 됨*/
+            justify-content: space-between; /*가로정렬*/
+            align-items:center;  /*가운데정렬*/
+            flex-wrap: wrap;
+            /*
+            align-content: space-around;
+            flex-start:세로정렬에서 위쪽맞춤, flex-end:아래맞춤
+            space-between:위쪽과 아래쪽 맞춤.
+            space-around: 모든 공백제공, 위쪽, 아래쪽 공백
+            */
+            
+            /*
+             flex-wrap: wrap; 하단으로 떨어짐
+             align-items:center : 가운데정렬  stretch:늘려서 채워줌(height가 없어야함)
+            */
+            /*
+            flex-start:첫지점으로 배치, flex-end:(왼쪽밑)끝지점으로 배치, center:가운데 배치, space-around:(모든항목 간격배치)모든공간을 동일하게 배치
+            space-around:끝점으로 간격배치(끝지점은 붙임)
+            */
+            /* display: flex; 를 해야 flex-wrap이 적용이됨 */
+            /*flex-wrap: wrap; /*wrap:여러줄표시(부모요소를 벗어나게 됐을때 그냥 밑으로 떨어짐), nowrap:한줄표시(부모요소를 벗어나게돼도 그냥 옆으로 붙음), wrap-reverse:위쪽배치*/
+            /*flex-direction: row; /*row(디폴트값):가로기준정렬, column:세로기준정렬, row-reverse:가로기준 우측편(오른쪽부터) 정렬*/
+        }
+        div{width:180px; height: 80px; border:1px solid red;}
+        /* order:순서배치바꾸기 */
+        /*
+        .c01{order:1;}
+        .c02{order:4;}
+        .c03{order:2;}
+        .c04{order:5;}
+        .c05{order:3;}
+        */
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="c01">1</div>
+        <div class="c02">2</div>
+        <div class="c03">3</div>
+        <div class="c04">4</div>
+    </div>
+    
+</body>
+</html>

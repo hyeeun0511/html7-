@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        .main{width:1000px; height:200px;
+        border:1px solid black;
+        background: yellow;
+        display: flex;
+        }
+        div{width:200px; height:200px; border:1px solid black;
+            background: pink;
+        }
+        .c02{/*display: none;*/ background: green;}
+        .c02:hover{visibility: hidden;}
+        .sect{
+            width:80%; height: 700px; border:1px solid black ;
+            background: #eee;
+            column-width: 300px;
+            /* column-count: 3; */                 /* 다단 개수 */
+            column-rule: 2px dotted black; /* 다단(문단) 사이 줄 표시 */
+            text-align: justify;             /* 양쪽 맞춤 */
+        }
+        table,td{border: 1px solid black;
+            border-collapse:collapse; text-align: center;
+            vertical-align: top; /*bottom, center*/
+            /*border-spacing: 10px; /* 보더 두께 */
+        }
+        td{width:100px; height: 40px;}
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <div class="main">
+        <div class="c01">1</div>
+        <div class="c02">2</div>
+        <div class="c03">3</div>
+    </div>
+    <hr>
+    <div class="sect">
+        
+한국형발사체 ‘누리호’가 2년 6개월 만에 우주를 향해 날아 오른다. 지난 2023년 5월 3차 발사에 이어 4차 발사에 나서는 것이다.
+
+3차 발사 때보다 탑재 위성은 5개 더 많아졌고, 위성 총중량도 500㎏에서 960㎏로 2배 가까이 늘었다. 목표 고도도 550㎞에서 600㎞로 높아졌고, 발사 시간도 주탑재위성인 차세대중형위성 3호의 오로라 관측 임무를 위해 처음으로 새벽 시간대에 발사된다.
+
+11일 한국과학기자협회, 한국항공우주연구원이 개최한 온라인 미디어 설명회에서 한영민 항우연 우주발사체연구소장은 오는 27일로 예정된 누리호 4차 발사에 대한 준비 상황에 대해 발표했다.
+
+누리호 4차 발사는 오는 27일 새벽 0시 54분부터 오전 1시 14분 사이 전남 고흥 나로우주센터에서 발사될 예정이다.
+
+특히 이전 발사와 달리 민간 체계종합기업인 한화에어로스페이스가 발사체 제작 전 과정을 주관해 수행하는 첫 발사라는 점에서 의미를 갖는다.
+
+누리호에는 주탑재위성인 차세대중형위성 3호와 부탑재위성으로 산학연이 개발한 12기의 큐브위성이 실린다. 3차 발사 때보다 큐브위성이 5기 늘어났고, 큐브위성의 사출은 기존과 달리 2개씩 18∼23초 간격으로 이뤄진다.
+
+한 소장은 “누리호 4차 발사는 1·2·3차 발사와 비교해 기술적으로 규격이나 성능은 크게 달라진 게 없다”면서 “다만, 탑재위성이 늘어나 기존에 한 개씩 20초 간격으로 사출하던 것을 2개씩, 최소 18초 간격을 두고 변경해 사출한다”고 설명했다.
+    </div>
+
+    
+</body>
+</html>
