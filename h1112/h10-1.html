@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0; 
+          font-family: "Noto Sans KR", sans-serif;
+          font-optical-sizing: auto;
+          font-style: normal;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100..900&display=swap');
+        .media{width:100%; height:700px;  
+            overflow: hidden;
+        }
+        video{width:100%; height:900px; object-fit: cover; }
+        .title{position: absolute; top:450px; left:100px; }
+        .title>h2{ font-size:60px; color:white; font-weight: 700;
+            letter-spacing: -5px;
+        }
+        .title>p{font-size:16px; color:white; font-weight: 400;
+           letter-spacing: -0.4px; margin-bottom:5px;
+        }
+        .section{width:100%; height:100px; background: #efefef;}
+        .main{width:100%; height:464px; display: flex; color:white;   }   
+        .main>.m_left{width:50%; height:464px;
+            background: url('https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_1150,c_limit/b3cb7d01-b8d7-45e5-a038-8cddf1e20fa1/nike-just-do-it.jpg') no-repeat;
+            background-size: cover;
+        } 
+        .main h4{font-size: 32px; font-weight: 500; margin:300px 0 28px 48px;}
+        .main .sale{ width:91px; height:40px; color:black;
+            line-height: 40px; font-weight: 600;
+            background: white; border-radius: 20px; text-align: center;
+            font-size: 15px; margin-left:48px;}
+        .main>.m_right{width:50%; height:464px; 
+            background: url('https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_1150,c_limit/f46cfa26-48e1-4d8f-b6f2-914bcdb4d221/nike-just-do-it.jpg') no-repeat;
+            background-size: cover;
+        } 
+        footer{width:100%; height:500px; background: #eee;}
+    </style>
+</head>
+<body>
+    <!-- div:100%,650px; 나이키 동영상 전체화면에 출력 -->
+    <!--  스우시 시리즈 푸퍼 패딩 -->
+    <!-- 추위를 위한 설계, 움직임을 위한 디자인. -->
+    <!-- 스우시 시리즈 푸퍼 패딩 컬렉션을 소개합니다. -->
+    <div class="media">
+        <video src="img/WHY DO IT NIKE.mp4" autoplay muted loop></video>
+    </div>
+    <div class="title">
+        <h2>스우시 시리즈 푸퍼 패딩</h2>
+        <p>추위를 위한 설계, 움직임을 위한 디자인.</p>
+        <p>스우시 시리즈 푸퍼 패딩 컬렉션을 소개합니다.</p>
+    </div>
+    <!-- 동영상 사이 공백 -->
+    <div class="section"></div>
+    
+    <!-- 이미지 2개 -->
+    <div class="main">
+        <div class="m_left">
+            <h4>여성 겨울 의류</h4>
+            <div class="sale">구매하기</div>
+        </div>
+        <div class="m_right">
+            <h4>남성 겨울 의류</h4>
+            <div class="sale">구매하기</div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

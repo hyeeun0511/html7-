@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포레스트 리솜</title>
+    <style>
+        *{padding:0; margin:0;}
+        body{width:100%; height:3000px;}
+        header{width:100%; height:121px; border-bottom:1px solid #e8e8e8;
+         /*background: yellow;*/
+         position: fixed; top:0; left: 0;
+         background: white; z-index: 10; /*가장 앞으로*/
+        }
+        .banner{width:100%; height:600px; position: relative;
+          top: 121px; left:0; /*position: fixed;로 header가 고정돼서 banner가 header밑부분부터 시작하는거._ 위에 여백을 주는거*/
+          background: url('img/FALL_IN_RESOM_pc.jpg') no-repeat 0 -270px;
+          
+        }
+/*
+        @keyframes h4{
+            from{left:10px; color:rgba(255,255,255,0);}
+            to{left:100px; color:rgba(255,255,255,1);}
+            }
+
+        @keyframes p{
+            from{left:10px; color:rgba(255,255,255,0);}
+            to{left:100px; color:rgba(255,255,255,1);}
+            }
+*/
+        
+        @keyframes bannermove1 {
+            from{left:10px; color:rgba(255,255,255,0);}
+            to{left:100px; color:rgba(255,255,255,1);}
+        }
+        @keyframes bannermove2 {
+            from{left:-80px; color:rgba(255,255,255,0);}
+            to{left:100px; color:rgba(255,255,255,1);}
+        }
+        
+
+        /*
+        .banner .banner_txt{
+                position:relative; 
+                color: white; letter-spacing: -0.7px;
+                left:100px; top:200px;
+                animation: bannermove 1.5s;
+                } 
+                /*부모한테만 넣으면 h4,p(자식)에게 상속됨*/
+        .banner_txt h4{font-size: 48px; 
+            position:relative; 
+            color: white; letter-spacing: -0.7px;
+            left:100px; top:200px;
+            animation: bannermove1 1.5s;
+        }
+        .banner_txt p{font-size: 24px; 
+            position:relative; 
+            color: white; letter-spacing: -0.7px;
+            left:100px; top:200px;
+            animation: bannermove2 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <div class="banner">
+        <div class="banner_txt">
+            <h4>파노라마 숲에서 즐기는 프라이빗 스파</h4>
+            <p>계절의 색을 담은 숲이 나만의 정원이 됩니다.<br>
+            자연과 함께하는 특별한 쉼을 경험해보세요.</p>
+        </div>
+    </div>
+    <div class="sect">
+
+    </div>
+    
+</body>
+</html>

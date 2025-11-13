@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        li:nth-child(3){font-size: 20px; color:red;}  /*똑같은 li의 N번째 요소*/ /*다른 요소가 들어와도 자식으로 인정*/
+        li:nth-of-type(4){font-size:20px; color: blue;}  /*type이 같아야 자식으로 인정 -> ul==>li만 자식으로 인정*/
+        .main{font-size: 18px; color:#00478b; font-weight: 500;
+        margin:50px; position:relative;
+        padding-left:10px;
+        }
+        .main::before{  /*메인이라는 것(현재요소) 앞에 특별한 것 하나 넣어달라는 의미*/
+            content:"-";
+            margin-right: 15px; /*-와 글 사이에 간격을 줄때  -> - (간격) 기후변화 리스크 관리 프로세스*/
+            font-size: 20px;
+            
+            /*content:"";
+            position:absolute;
+            top:0;
+            left:0;            /*위치값을 넣어줘야 결과가 나옴 (position,top,left)*/
+            /*margin:7px auto;
+            width: 2px;
+            height:15px;
+            background: #00478b;*/
+        } 
+    </style>
+</head>
+<body>
+    <div class="main">기후변화 리스크 관리 프로세스</div>
+
+    <ul>
+        <li>사과</li>
+        <hr>              <!--li와 hr은 형제요소-->
+        <li>복숭아</li>
+        <li>배</li>
+        <li>수박</li>
+        <li>바나나</li>
+        <li>멜론</li>
+        <li>딸기</li>
+    </ul>
+</body>
+</html>

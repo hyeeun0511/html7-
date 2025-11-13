@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0}
+        .main{width:600px; height:2000px; 
+        margin-bottom: 20px; background: greenyellow;
+        height:2000px; 
+        }
+
+        .top{
+         position: fixed; right:100px; bottom:50px;
+         width:50px; height:50px; border:1px solid rgb(201,201,201);
+         border-radius: 50%; text-align:center;
+         line-height:55px;
+         /* 사각모델 그림자생성 */
+         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <h2 id="top">메인페이지</h2>
+    <a href="#top">                <!--a태그를 top에 달아줘야 top을 클릭했을때 상단으로 올라감-->
+        <div class="top">
+            <img src="images/ico_top.svg">
+        </div>
+    </a>
+    <div class="main" >
+        <video src="images/WHY DO IT NIKE.mp4"muted loop autoplay ></video>
+    </div>
+    
+</body>
+</html>

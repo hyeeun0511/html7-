@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0;}
+        div{width:600px; height: 380px; border:1px solid black;
+        margin:200px 400px; } /*overflow: hidden  :  박스 틀을 이미지가 벗어나지 않음*/
+     
+        /* translate:이동, scale:크기, rotate:회전, skew:기울기 */ 
+        /* perspective:원근감 */
+        img:hover{
+            backface-visibility:visible; /*hidden : 뒷면이 흰색으로 보임*/
+            transform:rotateX(360deg); /* deg:도(각도) 360deg:360디그리 */
+            transition:2s;
+            /* 1.5배 확대 */
+            
+            /*
+            transform:translate(50px,100px);
+            transform: scale(1.5); 
+            transition: 2s;  /* 애니메이션 효과 넣어주기 
+            transform: translate3d(100px,0,200px); /*Z축(translateZ) : 앞뒤
+            transform-origin:left top;  :  변형의 기준점 설정 
+            perspective: 900;  :  깊이감
+            */
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/car1.png">
+    </div>
+    
+</body>
+</html>
