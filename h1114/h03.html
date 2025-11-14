@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest resom</title>
+    <style>
+        *{padding:0; margin:0;}
+        ol,ul{list-style: none;}
+        a{text-decoration: none; color: inherit;}
+        header{width:100%; height:121px;            /*메뉴 전체 틀 잡기*/
+         border-bottom: 1px solid #f0f0f0;
+        }
+        .menu{width:1290px; height:121px; margin:0 auto;
+            display: flex;
+            }
+        .logo{width:132px; height:121px; 
+            display: flex; align-items: center;
+        }
+        .logo img{width:132px; height:45px;}
+        nav{width: 1158px; height:121px;  }
+        .t_menu ul{height: 51px;  border: 1px solid black;
+                }
+        .t_menu ul{ height:51px; display: flex; justify-content: flex-end; /*justify-content: flex-end; -> 오른쪽으로*/
+          align-items: center; font-size: 12px; color:#8a8d8f;
+          font-weight: 400;
+        }
+        .t_menu ul li:after{
+            content:'|';    
+            font-size: 10px; display: inline-block; color:#d3d3d3;  /*inline-block : width,height를 줄수있음+가로정렬 가능 */
+            margin:0 13px;
+         }
+        .t_menu ul li:last-child:after{
+            content:''; 
+            margin:0;    /*여백을 지움*/
+        } 
+
+        
+        .m_menu{height: 70px; /*border:1px solid black;*/ }
+        .m_menu ul {
+            font-size: 19px;  color: black;
+            display: flex; 
+            /*border: 1px solid black;*/
+            justify-content: flex-end;    /*틀의 오른쪽으로 붙임*/
+        }
+        .m_menu ul li{
+            margin: 12px 0 0 90px;
+            font-weight: 500;
+            /*border: 1px solid black;*/
+        }
+        .m_menu ul li:hover{
+            border-bottom: 3px #718929; color:#718929
+        }
+        .photo {width:100%; }
+        .event{
+            border:1px solid black;
+            width:100%; height:39px;
+            margin-top: 100px;
+            display: flex;
+        }
+        .event h2{
+            border:1px solid black;
+            margin:0 auto; 
+            font-size: 32px; color: #1b1b1c; font-weight: 300;
+            display: inline-block;}
+        .more{
+            border:1px solid black;
+            width:72px; height:16px;
+            display: flex;
+            line-height: 10px;
+        }
+        
+        .more img:hover{
+            backface-visibility:visible; 
+            transform:rotate(720deg);
+            transition:2s;
+        }
+        p{
+            margin-right: 10px;}
+        .slide_menu{width:100%; height: 360px;}
+
+        
+    </style>
+</head>
+<body>
+    <header>      <!--전체 틀-->
+        <div class="menu">
+            <div class="logo">
+                <img src="img/img_logo_re_forest.png">   <!--'Forest resom' 로고 이미지-->
+            </div>
+            <nav>
+                <div class="t_menu">     <!--회원가입 메뉴-->
+                    <ul>
+                        <li>회원예약</li>
+                        <li>패키지 예약</li>
+                        <li>부대시설 예약</li>
+                        <li>회원가입</li>
+                        <li id="end">로그인</li>   <!--회원가입 메뉴 마지막 부분 | 없애기위해 따로 id 지정-->
+                    </ul>
+                </div>
+                <div class="m_menu">   <!--대표 메뉴-->
+                    <ul>
+                        <li>포레스트</li>
+                        <li>스파</li>
+                        <li>객실</li>
+                        <li>특별한 경험</li>
+                        <li>부대시설</li>
+                        <li>브랜드소개</li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="photo">
+            <img src="img/FALL_IN_RESOM_pc.jpg">
+        </div>
+
+        <div class="event">
+            <h2>EVENT</h2>
+            <div class="more">
+                <p>more</p>
+                <img src="img/ico_re_plus.png">
+            </div>
+        </div>
+
+    </header>
+    <div class="slide_menu">
+        <div class="ul_menu">
+                <div class="sm00 sm_01">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
+        <div>
+    </div>
+    
+</body>
+</html>
