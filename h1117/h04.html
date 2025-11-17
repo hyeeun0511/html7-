@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="h1">과일목록</h1>
+    <h2 class="h2">바나나</h2>
+    <h2 class="h3">딸기</h2>
+    <h2 class="h4">사과</h2>
+    <h4 id="h5">
+        <ul>
+            <li>배</li>
+            <li>수박</li>
+        </ul>
+    </h4>
+
+    <script> 
+        alert("경고창 생성");
+        console.log("로그 정보");  //콘솔창에 "로그 정보"라고 찍힘
+        // document.querySelector(".h1").innerText;  //.h1->h1의 위치점을 가져오는 것
+        console.log(document.querySelector(".h1").innerText="비밀번호 불일치");  //.h1->h1의 위치점을 가져오는 것  // "과일목록" 글씨에서 -> "비밀번호 불일치"로 바뀜
+    </script>
+</body>
+</html>

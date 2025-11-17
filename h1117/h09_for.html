@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse:collapse;}
+        table{margin:20px auto; text-align: center;}
+        th,td{width:100px; height:40px;}
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        <파이썬>
+        for i in range(10):
+        print(i)
+        */
+        /* for() 초기값;조건식;증감식){자바스크립트 코드} */
+        /*
+        var sum = 0;    //변수선언
+        for(var i=1;i<10;i++){     //초기값   의미 : 1부터 10까지 들어있는 합을 구하세요.
+            sum += i;
+        }  
+        document.write("합계 : ",sum);
+        */
+        /*100을 넘는 시점이 언제인지 출력하고, 100넘는 시점의 결과값도 출력하세요.*/
+        /*
+        var sum = 0;
+        for(var i=1;i<100;i++){
+            sum += i;
+            if(sum>=100){
+                document.write("i: ",i,", sum: ",sum,"<br>")
+                document.write("이전 i: ",i-1,", sum: ",sum-i,"<br>")
+                
+                break;  //반복문에 해당되는 내용에 적용
+            }
+        }
+        document.write("합계 : ",sum);
+        */
+
+        /*
+        //1-10 까지의 합을 구하시오.
+        //for(초기값;조건식;증감식)
+        var sum = 0;
+        for(var i=1;i<=10;i++){
+            document.write(i+"<br>")
+        }
+        
+        for(var i=2;i<=9;i++){   //i에 2부터 9까지 들어있는 합을 구하라는 뜻
+        for(var j=1;j<=9;j++){
+            document.write(i+"*"+j+"="+(i*j)+"<br>");
+            // `` : 빽키 -> 파이썬에 포맷함수와 같음
+            document.write(`${i} * ${j} = ${i*j} <br>`);
+        }
+        }
+
+
+        <tr>
+            <td>2</td>
+            <td>X</td>
+            <td>1</td>
+            <td>=</td>
+            <td>2</td>
+        </tr>
+    */
+    </script>
+
+    
+    <table>
+        <tbody id="tbody">    <!--자바스크립트는 for문 돌려서 반복 불가-->
+            
+        </tbody>
+    </table>
+    
+    <script>
+        console.log(document.querySelector("#tbody"))  //tbody의 위치값찾아가기위해  //밑에 있어야함
+        var tbody = document.querySelector("#tbody");
+        tbody.innerHTML = ``
+        for(var i=1;i<=9;i++){      //i에 1부터 9까지 들어있는 합을 구하라는 뜻
+            console.log(i);
+            tbody.innerHTML = tbody.innerHTML + `
+            <tr>
+                <td>2</td>          
+                <td>X</td>
+                <td>${i}</td>
+                <td>=</td>
+                <td>${2*i}</td>
+            </tr>
+            `; 
+        }
+        
+        
+        // html 코드를 만들어서 innerHTML로 넣어야함
+        /*
+        document.querySelector("#tbody").innerHTML =  //위치값
+        `<tr>
+            <td>2</td>
+            <td>X</td>
+            <td>1</td>
+            <td>=</td>
+            <td>2</td>
+        </tr>`     // ``는 ``안에 소스코드를 그대로 innerHTML에 넣어줌
+        */
+    </script>
+
+</body>
+</html>

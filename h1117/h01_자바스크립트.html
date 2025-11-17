@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!--자바스크립트 외부링크-->
+    <script src="js/script.js"></script> <!--외부링크를 주로 사용함-->
+    <script>
+        /*자바스크림트에서는 script가 head,body 어디있든 상관없음 -- head에 사용 권장*/
+        document.write("hello<br>")
+    </script>
+</head>
+<body>
+    <script>
+
+        // 주석: //(한줄주석), /**/(여러줄 주석)  //
+        //document.write("안녕하세요")   /*document:창_화면 자체에 글을 출력하는 것*/
+        //document.write("<h1>안녕하세요</h1>")   /*태그:글 안에 들어가있어야함*/ /*파이썬의 print같은 형태*/ 
+        
+
+        //변수선언 var,let
+        //    let a;      // undefine (none type_정의되지 않음)
+        //    a = 100;    //숫자(정수)
+        //    a = "안녕"; //문자열
+        //    a = 1.5    // 숫자(실수)
+        //    a = true;  //boolean
+
+        //-경고창 : alert()
+        //alert("경고창")
+
+        //-화면 출력 : document.write     --- 잘 사용하지 않음
+        //document.write("안녕하세요")
+
+        //-입력창 : prompt()
+        //prompt("입력창")
+
+        //-확인질문창 : confirm()
+        //confirm("게시글을 삭제하겠습니까?")
+
+        //-콘솔출력 : console.log  
+        // console.log("콘솔창에 로그가 출력됨.(확인용도로 많이 사용)  // document.write() : 화면에 출력")
+
+        //-타입확인 : typeof()
+
+        //----------------------------------------------------------------------------------------
+
+
+        //변수선언 var,let
+        //-> 문자열, 숫자(정수,실수),boolean(bool_True,False)
+        //상수선언 const
+        //-> 상수는 한번 값이 정해지면 수정불가, 사용은 가능 (상수:값 변경 불가능)
+
+        //"태그로 인식"
+        //var num = 0;  //변수선언 규칙: 끝에 ; 넣기
+        //document.write(num+"<br>");  //<br>이 찍히지않음
+        // prompt("입력창 : 숫자를 입력하세요.>> ")
+        //var input = prompt("입력창 ㅣ 숫자를 입력하세요.>> ")
+        //document.write("입력값 : ",input+"<br>");
+        
+      
+        //let result = confirm("1번 게시글을 삭제하시겠습니까?")
+        //document.write("결과 : ",result);
+        /*
+        const a = 10;
+        a = 20;
+        document.write("결과 : ",a);
+        */
+
+        let a = 100;
+        document.write(typeof(a),"<br>")   // 정의되지 않음 - undefined
+        
+        let b = 100;
+        document.write(typeof(b),"<br>")   // number - 정수
+        
+        let c = 1.5;
+        document.write(typeof(c),"<br>")   // number - 실수
+
+        let d = "안녕";
+        document.write(typeof(d),"<br>")   // 문자열
+
+        
+
+
+    </script>
+    
+</body>
+</html>

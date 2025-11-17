@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label id="labelTxt">비밀번호</label>
+    <input type="text" id="pw"><br>
+    <label>비밀번호확인</label>
+    <input type="text" id="pw2" onkeyup="loginBtn()"><br>
+    <span id="txt"></span><br>  <!--innerText로 인해 공백이 글씨로 바뀜-->
+    <button type="button" onclick="loginBtn()">로그인</button>  <!--onclick: 로그인버튼을 누르면 로그인-->
+    <script>
+        function loginBtn(){                                             //function안에 넣어놔야함 
+            //alert("호출")
+            console.log(document.querySelector("#pw").value);
+            console.log(document.querySelector("#pw2").value);           //input->value
+            console.log(document.querySelector("#labelTxt").innerText);  //label->innerText
+            var pw = document.querySelector("#pw").value;                //비밀번호 일치하는지 확인 구간
+            var pw2 = document.querySelector("#pw2").value;
+            if(pw==pw2){
+                document.querySelector("#txt").innerHTML="<span style='color:blue;'>2개 비밀번호가 같습니다.</span>" 
+                console.log("2개 비밀번호가 같습니다.");
+            }else{
+                document.querySelector("#txt").innerHTML="<span style='color:red'>2개 비밀번호가 다릅니다.</span>"
+                console.log('2개 비밀번호가 다릅니다.');
+            }
+        }//loginBtn
+ 
+    </script>
+</body>
+</html>
