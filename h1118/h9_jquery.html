@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+        // 선택자:#,.,
+        // 글자출력,입력 : text()-글자,val()-input글자
+        // 형제관계에서 찾기 : eq()-형제관계에서 찾기
+        // parent()-부모요소, children()-자식요소, next()-다음요소, prev()-이전요소
+        // closest()-가까운 태그
+        // 속성값 읽기 : attr-속성
+        $(function(){
+            console.log($("li"));
+            console.log($("li").eq(0).text());  // 모든게 넘어옴 -> 바나나사과배딸기수박
+            console.log($("ul").children().eq(0).attr("id"));  // (children:자식요소에 관련된것)자식요소에 있는 글자를 싹다 가져옴  //0번째에 있는 id값을 알려달라느 뜻
+            console.log($("#li01").parent().html());
+            console.log($("#li01").parent().attr("id"));  // 속성:attr
+            console.log($("#li01").next().text())   // 사과
+            console.log($("#li01").next().next().next().text());   
+            console.log($("#li03").text())   // 90
+            console.log($("#li03").prev().text())   // 100  // prev : 앞전으로
+            console.log($("#li03").closest("ul"));  
+        });
+
+    </script>
+</head>
+<body>
+    <ul id="u01">     
+            <li id="li01">1</li>
+            <li>홍길동</li>
+            <li>100</li>
+            <li id="li03">90</li>
+            <li>90</li>
+        </ul>
+    <!--
+        <ul id="u01">     id:속성값
+            <li id="li01">바나나</li>
+            <li>사과</li>
+            <li>배</li>
+            <li>딸기</li>
+            <li>수박</li>
+        </ul>
+    -->
+    
+</body>
+</html>

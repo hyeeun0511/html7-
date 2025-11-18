@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  /*외관 지정*/
+        table,th,td{border: 1px solid black; border-collapse: collapse;}
+        th,td{width:100px; height:40px; text-align: center;}
+    </style>
+</head>
+<body>
+    <label>이름</label> <!--이름 입력하는 칸 만들기-->
+    <input type="text" id="name" onkeyup="keyBtn(event)">
+    <button type="button" onclick="saveBtn()">저장</button> 
+    <div id="txt"></div>
+    <table>
+        <tr>
+            <th>이름</th>
+        </tr>
+        <tbody id="tbody">
+            <tr>
+                <td>홍길동</td>
+            </tr>
+            <tr>
+                <td>유관순</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var arr = ['홍길동','유관순'];   // 선언 : var //[홍길동.유관순,...] 배열로 진행
+
+    </script>
+    
+</body>
+</html>

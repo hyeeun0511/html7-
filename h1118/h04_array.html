@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th,td{width:100px; height:40px; text-align: center; }
+        #txt{width:400px; height:50px; border:1px solid black; }
+    </style>
+</head>
+<body>
+    <label>이름</label>
+    <input type="text" id="name" onkeyup="keyBtn(event)">  <!-- onkeyup : 키를 눌렀다가 땠을때 -->  <!--입력하는 타입_id:name_눌렀다가 땠을때 입력가능-->
+    <button type="button" onclick="saveBtn()">저장</button>  <!-- type="button" 넣어야 에러 안남 -->  <!-- onclick="saveBtn()" : 클릭했을때 저장 --> 
+    <div id="txt"></div>
+
+    <table>
+        <tr><th>이름</th></tr>
+        <tbody id="tbody">
+            <tr><td>홍길동</td></tr>      <!--위치점 : document.querySelector("#tbody")-->
+            <tr><td>유관순</td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        var arr = ['홍길동','유관순'];                      // 선언
+        document.querySelector("#txt").innerHTML = arr;   // HTML 문서 안에서 id가 txt인 요소를 추출 // arr : 요소 내용을 arr변수에 들어있는 값으로 바꾼다는 뜻
+
+        function keyBtn(event){
+            if(event.keyCode == 13){   // 13:enter키
+                saveBtn();             // enter키 -> 저장
+            }
+        }
+
+        function saveBtn(){
+            var name = document.querySelector("#name").value;  // var : 변수선언 . value : 값 추출
+            arr.push(name);
+            console.log(arr);
+            document.querySelector("#txt").innerHTML = arr;
+            document.querySelector("#name").value = '';  // 빈공백을 넣으면 이전꺼 지워짐  // value : 입력한 값 출력
+            document.querySelector("#name").focus();     // name에 포커스가 가도록 (클릭하지않아도)
+            var tbody = document.querySelector("#tbody");
+            // console.log(document.querySelector("#tbody").innerHTML);  //tbody에 있는 innerHTML가져오라는 뜻    -> innerHTML : <tr><td>홍길동</td></tr><tr><td>유관순</td></tr>
+            // console.log(dftml+"<tr><td>유관순</td></tr>"); 
+            console.log(tbody.innerHTML+`<tr><td>${name}</td></tr>`);
+            tbody.innerHTML += `<tr><td>${name}</td></tr>`;
+            
+            alert("이름을 저장합니다.")
+        }
+    </script>
+
+</body>
+</html>

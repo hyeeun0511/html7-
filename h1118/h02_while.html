@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        var i=0;
+        while(i<10){                                    //i가 10보다 작을때 까지  //while문: 조건이 맞으면 계속 진행  //for문: 횟수가 정해졌을때 사용
+            document.write(i+"<br>");
+            i++;
+        }
+        document.write("======================<br>");
+        for(var i=0;i<10;i++){
+            document.write(i+"<br>");
+        }
+
+        // 0 =< Math.random() < 1  // 0은 포함이 되고 1은 포함이 안됨
+
+        // 문자열에서 숫자형으로 변환 -> Number(),String(),Boolean()
+        // 실수형에서 정수형으로 변환 -> parseInt()
+        // 정수형에서 실수형으로 변환 -> parseFloat()
+
+        // 1~10까지 랜덤숫자 생성
+        // 공식 : parseInt(Math.random()*10);  // 0~9 정수 뽑아낼 수 있음
+        // 공식 : parseInt(Math.random()*45);  // 0~44 정수
+        // 공식 : parseInt(Math.random()*10)+1;  // 1~10 정수
+        // 공식 : parseInt(Math.random()*45)+1;  // 1~45 정수
+        // 공식 : parseInt(Math.random()*50)+1;  // 1~50 정수
+        document.write((parseInt(Math.random()*10)+1)+"<br>");      // 랜덤 숫자가 나옴  // document.write():출력
+        document.write((parseInt(Math.random()*10)+1)+"<br>");      // 랜덤 숫자가 나옴
+        document.write((parseInt(Math.random()*10)+1)+"<br>");      // 랜덤 숫자가 나옴
+        document.write(Math.random()+"<br>");
+        document.write(Math.random()+"<br>");
+        document.write(Math.random()+"<br>");
+        */
+
+        // 1~100까지 랜덤숫자 맞추기 10번을 해서 맞으면 정답. 
+        // 입력값이 높으면 낮은 수 입력바람.
+        // 입력값이 낮으면 높은 수 입력바람.
+        // 정답 : 
+        var random = parseInt(Math.random()*100)+1;  // 변수 선언
+        var i = 0;
+        while(i<10){  
+            var input = prompt("1~100 숫자를 입력하세요.>> ")  // 입력을 10번 받음  // 변수선언
+            if(random>input){
+                alert('입력한 값이 작습니다. 더 큰 수를 입력하세요!')  // alert:경고창
+            }else if(random<input){
+                alert('입력한 값이 큽니다. 더 작은 수를 입력하세요!')
+            }else{
+                alert('정답입니다.');
+                break;
+            }
+            i++;  // i++을 넣어야 10번만 입력받고 멈춤  // 입력한 횟수 세는것 -> 입력하지않을 시 : 무한 _ i++:0번째,1번째,2번째 ...
+        }
+
+        document.write("정답 : "+random+"<br>");
+ 
+
+
+
+    </script>
+    
+</body>
+</html>

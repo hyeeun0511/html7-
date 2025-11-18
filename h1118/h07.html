@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>   <!--제이쿼리최신 검색-->
+    <title>학생성적프로그램</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th,td{width:100px; height:40px; text-align: center; }
+    </style>
+</head>
+<body>
+    <script>
+        function saveBtn(){
+            var sno = document.querySelector("#sno").value;
+            if(sno.length<=0){  //value에 있는 값이 0보다 작은지 묻는것
+                alert("학생번호를 입력하셔야 저장이 가능합니다.");
+                document.querySelector("#sno").focus();
+                return;
+            } 
+            alert("학생성적을 저장합니다.");
+            var name = document.querySelector("#name").value;
+            var kor = Number(document.querySelector("#kor").value);
+            var eng = Number(document.querySelector("#eng").value);
+            var math = Number(document.querySelector("#math").value);
+            var total = kor+eng+math;
+            var avg = total/3;
+            console.log(sno,name,kor,eng,math.total,avg);
+            //tbody내용 가져오기
+            var tbody = document.querySelector('#tbody');
+            var dhtml = tbody.innerHTML;
+            //tbody에 입력된 내용 추가
+            tbody.innerHTML = dhtml + ` 
+                <tr id='${sno}'> 
+                    <td>${sno}</td>
+                    <td>${name}</td>
+                    <td>${kor}</td>
+                    <td>${eng}</td>
+                    <td>${math}</td>
+                    <td>${total}</td>
+                    <td>${avg}</td>
+                    <td>
+                        <button type="button" onclick="updateBtn(${sno})">수정</button>   
+                        <button type="button" onclick="deleteBtn(event,${sno})">삭제</button>
+                    </td>
+                </tr>
+                `
+
+            //
+            
+            // 매개변수로 넘김
+
+            inputClear(); //입력창 지우기
+        }
+
+        // 입력창 지우기 합수
+        function inputClear(){
+            document.querySelector("#sno").value='';
+            document.querySelector("#name").value='';
+            document.querySelector("#kor").value='';
+            document.querySelector("#eng").value='';
+            document.querySelector("#math").value='';
+        }
+
+        function enterBtn(event){      // enter키 누르면 값이 저장됨
+            console.log(event);        // console창에서 확인
+            if(event.keyCode == 13){
+                saveBtn();
+            }
+        }//eventBtn
+
+        // 삭제버튼함수
+        function deleteBtn(event,sno){
+            if(confirm(sno+" 번 학생을 삭제하시겠습니까?")){
+                                                                               // 다시 작성 필요 //
+                console.log(event.target.closest("tr"));
+                console.log(event.target.closest("tr").childNodes[1]);
+
+                //event.target.closest("tr").remove();    // 삭제가능    //target이라고 해야 tr태그를 가져올수있음
+                //document.getElementById(sno).remove();  // 삭제가능   // 찾을수 있음 
+                //document.getElementsByClassName(sno)      // 여러요소들을 가져와라 -> 배열로 넘어옴 (0번째,1번째,2번째, ...)
+                //document.getElementsByTagName(tr)
+                //document.querySelector("#"+sno).remove();   // 삭제불가 -> 정적이기 때문에    // 삭제됨  //태그,id,class가 됨   // 찾을수 없음
+            }
+            
+        }
+    </script>
+    <form action="#" method="get">
+        <label>번호</label>
+        <input type="text" id="sno" name="sno"><br>
+        <label>이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label>국어</label>
+        <input type="text" id="kor" name="kor"><br>
+        <label>영어</label>
+        <input type="text" id="eng" name="eng"><br>
+        <label>수학</label>
+        <input type="text" id="math" name="math" onkeyup="enterBtn(event)"><br> <!--enter키 누르면 입력되도록 하기위함 _ 마지막 부분에 넣어주기-->
+        <button type="button" onclick="saveBtn()">성적저장</button>
+    </form>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+            <th>비고</th>
+        </tr>
+        <tbody id="tbody">
+            
+        </tbody>
+
+    </table>
+</body>
+</html>

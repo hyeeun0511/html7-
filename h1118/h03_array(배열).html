@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 : 여러개의 값을 저장
+        /*
+        var i = 0;
+        document.write(i+"<br>"); //i의 값 하나만 저장해서 하나만 출력
+        
+        var arr = [1,2,3,4,5] // arr:array // 주소값이 들어있는것 -> 주소값을 보면 5개의 값이 있는것. arr의 값이 5개가 있는것X
+        document.write(arr[0]+"<br>");   // 첫번째 주소는 무조건 "0번째"부터 시작
+        document.write(arr[1]+"<br>");
+        document.write(arr[2]+"<br>");
+        document.write(arr[3]+"<br>");
+        document.write(arr[4]+"<br>");
+        var arr2 = [1,'홍길동',100,91,90.5] // 다른 타입이 올수도 있음
+        document.write(arr[0]+"<br>");
+        document.write(arr[1]+"<br>");
+        document.write(arr[2]+"<br>");
+        document.write(arr[3]+"<br>");
+        document.write(arr[4]+"<br>");
+        
+        
+        // 배열선언방법 - 리터럴생성, new객체생성
+        var arr = [1,2,3];                // 배열 선언방법1(리터럴생성)  // 권장  // 다른타입 가능 ('홍길동'-string)
+        var arr2 = new Array(4,5,6);      // 배열 선언방법2(new객체생성)  // new:객체 -> new Array 쓰는것, 안쓰는 것 똑같음
+        document.write(arr2+"<br>");
+
+        // 배열추가 - push,unshift,splice
+        arr.push(4)                       //  push  :  배열의 맨뒤에 추가
+        arr.unshift(0);                   // unshift : 배열 맨앞에 추가
+        arr.splice(2,0,5);                // 0요소를 유지하는 것. splice:제거기능도 있음   / 의미 : 2번째 위치에서 제거하지않고, 5를 추가 - 0을 입력해야 추가가 됨. 
+        arr.splice(2,2);                  // 0요소를 유지하는 것. splice:제거기능도 있음   / 의미 : 2번째 위치에서 2개를 제거 - 0을 입력하지 않으면 제거
+
+        // 배열수정 - 위치에 값을 입력하면 변경 됨.
+        arr[0] = 100;  // 0번째 값이 100으로 변경
+
+        // 배열삭제 - pop,shift,splice
+        arr.pop();        // 맨뒤 삭제
+        arr.shift();      // 맨앞 삭제
+        arr.splice(1,2);  // 1번째 위치 12개를 삭제
+
+
+        document.write(arr+"<br>");
+        
+        */
+
+        
+    </script>
+    <label>이름</label>
+    <input type="text" id="name" onkeyup="keyBtn(event)" placeholder="이름을 입력하세요.">
+    <button type="button" onclick="saveBtn()">저장</button>   <!--저장을 누르면 입력한 이름을 '홍길동','유관순','이순신'뒤에 출력되도록-->  <!-- onclick:누르면 발동되도록 -->
+    <div id="txt"></div>
+    <script>
+        var arr = ['홍길동','유관순','이순신']
+        document.querySelector("#txt").innerText = arr;
+        function keyBtn(event){
+            console.log("입력한 키값 : ",event.keyCode)
+            if(event.keyCode == 13){    //13번:enter키 -> enter키를 누르면 saveBtn(저장)해주라는 뜻  // 자바스크립트 키보드 키코드 값 서치해보면 나옴
+                saveBtn();
+            }
+        }
+
+
+        function saveBtn(){  // saveBtn -> 저장버튼을 클릭할때만 실행되는것
+            // alert('저장버튼클릭');
+            arr.push(document.querySelector("#name").value);   // 입력한 값 나오도록 하는것: value
+            console.log(arr);
+            document.querySelector("#txt").innerText = arr;   
+            document.querySelector("#name").value = "";   
+            arr.pop(document.querySelector("#name").value = "");    // 작성하면 전에 작성한 이름 지워지도록 -> arr.pop(출력값)
+        }
+    </script>
+
+
+</body>
+</html>
