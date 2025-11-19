@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script> <!--제이쿼리 쓸때 무조건 있어야함-->
+    <title>Document</title>
+    <script>
+        // 기존태그를 가져와서 새로운 태그를 추가해서 다시 입력하는 형태
+        // appepnd() - 뒤에 추가 , prepend() - 앞에 추가    -> 기존 소스에 추가로 더해달라는 뜻
+        // html() : 기존태그삭제후 추가
+
+        $(function(){
+            var str1 = "사과";
+            var str1 = "배";
+            var str1 = "복숭아";
+            var str1 = "바나나";
+            var str_all = "<li>"+str1+"</li><li>"+str2+"</li><li>"+str3+"</li><li>"+str4+"</li>"  // +:붙이라는 의미
+            var str_all2 = `<li>${str1}</li><li>${str2}</li><li>${str3}</li><li>${str4}</li>`  // ``(빽키) 사용시 -> 훨씬 유용
+
+            $("#btn").click(()=>{  //function() : ()안에 이름이 없음-익명함수  //()->{ : 화살표함수  //위치.이벤트종류(함수)
+                $("#fruit").val();  //추가하려는 데이터 //fruit에 있는거 가져옴
+                //$("#u01").append(`<li>${$("#fruit").val()}</li>`); //기존의 것을 들고오지않아도 된다는 편안함 //수박 입력시 *수박 으로 들어옴 //append : 뒤에 추가됨
+                //$("#u01").prepend(`<li>${$("#fruit").val()}</li>`); //기존의 것을 들고오지않아도 된다는 편안함 //수박 입력시 *수박 으로 들어옴  //prepend : 앞에 추가됨
+                $("#u01").html(`<li>${$("#fruit").val()}</li>`); //html : 기존것 삭제되고 입력한 값 저장됨
+
+                /*
+                var f = $("#fruit").val();
+                $("#u01").append(`<li>${f}</li>`);
+                */
+
+                $("#btn").click(()=>{
+                    f_append();
+                })
+
+                $("#fruit").keyup((event)=>{
+                    if(event.keyCode == 13) f_append();
+                })
+
+                //추가함수
+                var f_append = () => {
+                    var f = $("#fruit").val(); //추가하려는 데이터
+                    $("#u01").append(`<li>${f}</li>`);
+                }
+            
+            })
+        }); //jquery
+
+        function saveBtn(){
+            var f = $("#fruit").val(); //추가하려는 데이터
+            $("#u01").append(`<li>${f}</li>`);
+        }
+
+        /*
+        //function btn(매개변수)
+        function btn(){
+
+        }
+
+        //js 6버젼부터 나온것 _ 화살표함수 .간단함
+        var btn = () =>{
+        }
+        */
+
+    </script>
+</head>
+<body>
+    <input type="text" name="fruit" id="fruit"><br>
+    <button type="button" id="btn">저장</button>
+    <br>
+    <ul id="u01">
+        <li>바나나</li>
+        <li>딸기</li>
+    </ul>
+    
+</body>
+</html>

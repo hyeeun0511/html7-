@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>   <!--제이쿼리최신 검색-->
+    <title>학생성적프로그램</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th,td{width:100px; height:40px; text-align: center; }
+    </style>
+</head>
+
+
+<body>
+    
+    <form action="#" method="get">
+        <label>번호</label>
+        <input type="text" id="sno" name="sno"><br>
+        <label>이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label>국어</label>
+        <input type="text" id="kor" name="kor"><br>
+        <label>영어</label>
+        <input type="text" id="eng" name="eng"><br>
+        <label>수학</label>
+        <input type="text" id="math" name="math" onkeyup="enterBtn(event)"><br> <!-- enter키 누르면 입력되도록 하기위함 _ 마지막 부분에 넣어주기 --> <!--onkeyup="enterBtn(event)" : 엔터키 누르면 저장-->
+        <!-- 중요!!!!!! -->  <!-- form태그 안에 type=utton을 넣어놔야 onclick이 돎 -->
+        <button type="button" id="sbtn" onclick="saveBtn()">성적저장</button> <!-- 개별적으로 스타일 주지 말기 : 유지보수 힘듦 -->  
+    </form>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+            <th>비고</th>
+        </tr>
+        <tbody id="tbody">  <!--정보입력하면 저장되는곳 : tbody-->
+            <tr id="1">
+                <td>1</td>
+                <td>홍길동</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>300</td>
+                <td>100.0</td>
+                <td>
+                    <button type="button" onclick="updateBtn(this)">수정</button>   <!-- function을 작성하면 (this)를 꼭 작성해야함  //  this:id 역할을 함, 현재의 위치점을 알수있음 -->
+                    <button type="button" onclick="deleteBtn(this)">삭제</button>   <!-- id : 여러개 사용 X , 한군데에만 적어야 함 -->
+                </td>
+            </tr>
+            <tr id="2">
+                <td>2</td>
+                <td>유관순</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+                <td>270</td>
+                <td>90.0</td>
+                <td>
+                    <button type="button" onclick="updateBtn(this)">수정</button>   <!-- this 쓰는 이유 : id를 작성하면 매번 바꿔줘야하기 때문에 -->
+                    <button type="button" onclick="deleteBtn(this)">삭제</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 수정버튼함수
+        function updateBtn(thisBtn){
+            alert("수정버튼확인")
+            var tr_e = thisBtn.parentElement.parentElement;
+            var tds = tr_e.querySelectorAll("td"); //td 다 갖고오라는 의미
+            function txt_clear(){
+                document.querySelector("#sno").value=tds[0].innerText
+                document.querySelector("#name").value=tds[1].innerText
+                document.querySelector("#kor").value=tds[2].innerText
+                document.querySelector("#eng").value=tds[3].innerText
+                document.querySelector("#math").value=tds[4].innerText
+                document.querySelector("#sbtn").innerText = "성적수정"; //sbtn에 있는 성적저장을 성적수정으로 바뀌도록
+            }
+            //tds[0].innerText //tds[n]에 있는 텍스트를 알기위해 .innerText 작성
+            //tds[1].innerText
+            //tds[2].innerText
+            //tds[3].innerText
+            //tds[4].innerText
+            //tds[5].innerText
+            //tds[6].innerText
+
+        }
+
+        //삭제함수 - this (를 보낸것)
+        function deleteBtn(thisBtn){   //btn대신 this작성하면 안됨 _ this:예약어   //btn은 임의로 작성해놓은 것임
+            //console.log(thisbtn)
+            //console.log(thisbtn.parentElement)
+            //console.log(thisbtn.parentElement.parentElement.remove()) //remove():삭제 누를시 삭제됨
+            //console.log(tr_e.querySelectorAll("td")) // All_ 모두 찾아줘 ->td에 있는 요소 모두 찾아줘
+            var tr_e=thisBtn.parentElement.parentElement;
+            var del_name =tr_e.querySelectorAll("td")[1].innerText;  // [1] : td에 있는 1번째요소 _이름   querySelectorAll:찾을때 사용
+            if(confirm(del_name+"학생성적을 삭제하시겠습니까?")){
+                thisbtn.parentElement.parentElement.remove();
+            } //삭제누르자마자 바로 지워지지 않도록 _ 삭제할건지 한번더 확인
+        }//deleteBtn
+
+        //enterBtn함수
+        function enterBtn(event){
+            // console.log(event.keyCode);  콘솔창에서 확인해보기 위함
+            if(event.keyCode==13){  // enter키 누르면 저장
+                saveBtn();
+            }
+        }
+        // input 글자삭제함수
+        function txt_clear(){
+            document.querySelector("#sno").value='';
+            document.querySelector("#name").value='';
+            document.querySelector("#kor").value='';
+            document.querySelector("#eng").value='';
+            document.querySelector("#math").value='';
+        }
+
+        // 학생성적저장함수
+        // 외우기 필수 !!!!!!!!!! //
+        function saveBtn(){
+
+            var checkName = document.querySelector("#sbtn").innerText; //sbtn에 있는 innerText를 읽어와라
+            if(checkName == "성적수정"){
+                var sno = document.querySelector("#sno").value;  // 이 위치점의(번호) 내용을 바꿔달라
+                var name = document.querySelector("#name").value;
+                var kor = Number(document.querySelector("#kor").value);
+                var eng = Number(document.querySelector("#eng").value);
+                var math = Number(document.querySelector("#math").value);
+                var total = kor+eng+math;
+                var avg = total/3;
+                // sno안에 innerHTML을 넣어달라는 뜻
+                // td만 필요 -> 알맹이만 수정할 것이기 때문에  _ tr:전체 틀
+                document.getElementById(sno).innerHTML = `
+                    <td>${sno}</td>
+                    <td>${name}</td>
+                    <td>${kor}</td>
+                    <td>${eng}</td>
+                    <td>${math}</td>
+                    <td>${total}</td>
+                    <td>${avg}</td>
+                    <td>
+                        <button type="button" onclick="updateBtn(this)">수정</button> 
+                        <button type="button" onclick="deleteBtn(this)">삭제</button>
+                    </td>
+                `;
+                document.querySelector("#sbtn").innerText = "성적저장"; //성적수정->성적저장 으로 바꿈
+
+            }else{ //성적저장
+                var sno = document.querySelector("#sno").value;
+                if (sno.lenght <=0){
+                    alert("데이터를 입력하셔야 저장이 가능합니다.");
+                    document.querySelector("#sno").focus(); //sno에 포커스를 둔것 -> 나머지도 다 적용해야함(일단 번호만 한것)
+                    return; //데이터가 없으면 저장 불가
+                }
+                // alert("함수를 사용한 버튼 확인");
+                var name = document.querySelector("#name").value;
+                var kor = Number(document.querySelector("#kor").value);
+                var eng = Number(document.querySelector("#eng").value);
+                var math = Number(document.querySelector("#math").value);
+                var total = kor+eng+math;
+                var avg = total/3;
+                //위치
+                var tbody = document.querySelector("#tbody");  //현재 위치점으로 tbody 받아옴
+                var dhtml = tbody.innerHTML;
+                // ``(빽키) 안에서는 ${이름}으로 작성  _  작성시 밑에 이어서 저장됨
+                // <tr id='${sno}'> id값으로 쉽게 수정이 됨
+                tbody.innerHTML = dhtml + `
+                <tr id='${sno}'>
+                    <td>${sno}</td>
+                    <td>${name}</td>
+                    <td>${kor}</td>
+                    <td>${eng}</td>
+                    <td>${math}</td>
+                    <td>${total}</td>
+                    <td>${avg}</td>
+                    <td>
+                        <button type="button" onclick="updateBtn(this)">수정</button> 
+                        <button type="button" onclick="deleteBtn(this)">삭제</button>
+                    </td>
+                </tr>
+                `;
+                }
+
+
+            //데이터가 들어있는지 확인
+            var sno = document.querySelector("#sno").value;
+            if (sno.lenght <=0){
+                alert("데이터를 입력하셔야 저장이 가능합니다.");
+                document.querySelector("#sno").focus(); //sno에 포커스를 둔것 -> 나머지도 다 적용해야함(일단 번호만 한것)
+                return; //데이터가 없으면 저장 불가
+            }
+            // alert("함수를 사용한 버튼 확인");
+            var name = document.querySelector("#name").value;
+            var kor = Number(document.querySelector("#kor").value);
+            var eng = Number(document.querySelector("#eng").value);
+            var math = Number(document.querySelector("#math").value);
+            var total = kor+eng+math;
+            var avg = total/3;
+            //위치
+            var tbody = document.querySelector("#tbody");  //현재 위치점으로 tbody 받아옴
+            var dhtml = tbody.innerHTML;
+            // ``(빽키) 안에서는 ${이름}으로 작성  _  작성시 밑에 이어서 저장됨
+            // <tr id='${sno}'> id값으로 쉽게 수정이 됨
+            tbody.innerHTML = dhtml + `
+            <tr id='${sno}'>
+                <td>${sno}</td>
+                <td>${name}</td>
+                <td>${kor}</td>
+                <td>${eng}</td>
+                <td>${math}</td>
+                <td>${total}</td>
+                <td>${avg}</td>
+                <td>
+                    <button type="button" onclick="updateBtn(this)">수정</button> 
+                    <button type="button" onclick="deleteBtn(this)">삭제</button>
+                </td>
+            </tr>
+            `;
+            txt_clear(); //글자삭제
+        }//saveBtn
+        /* 위 부분과 같음
+        document.querySelector("#sbtn").addEventListener("click",function(){
+            alert("이벤트를 사용한 버튼 확인")
+        });
+        */
+    </script>
+
+</body>
+
+</html>

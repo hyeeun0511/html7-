@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>학생성적프로그램</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        table{width:1200px;}
+        th,td{height:40px; text-align: center; }
+        img{width:100px;}
+    </style>
+    <script>
+        // !!!!! 외우기 !!!!! //
+        $(function(){
+            $("#takeBtn").click(function(){   //takeBtn를 클릭하면
+                //alert('확인');  //확인용도_알람 뜨는지
+                $.ajax({
+                    url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=f072e141abd7369b66b965594588f51465fa1cfef007631f76014050c5c6157c&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+                    type:"get",
+                    data:{},
+                    dataType:"json",
+                    success:function(data){
+                        alert("성공");
+                        console.log(data.response.body.items.item);  //10개 array배열 : data.length (배열의 길이) (이름이 data이기 때문에 arr.length->data.length)
+                        var tour_data = data.response.body.items.item
+                        var dataHtml = ``;
+                        //기본for문
+                        for(var i=0;i<tour_data.length;i++){    //for(var i=0;i<10;i++)    -10번 돌기때문에 data.length / 10 둘다 작성 가능
+                            // jquery 사용
+                            // <tr id="${data[i].sno}"> 위치값(나중에 수정할때 필요)  // <td>${data[i].sno}</td> 나열 번호
+                            dataHtml += `
+                                <tr id="${tour_data[i].galContentId}">
+                                    <td>${tour_data[i].galContentId}</td>  
+                                    <td>${tour_data[i].galTitle}</td>
+                                    <td>${tour_data[i].galCreatedtime}</td>
+                                    <td>${tour_data[i].galPhotographyLocation}</td>
+                                    <td>${tour_data[i].galPhotographer}</td>
+                                    <td>${tour_data[i].galSearchKeyword}</td>
+                                    <td><img src="${tour_data[i].galWebImageUrl}"> </td>
+                                    
+                                </tr>
+
+                            `;
+                        }
+
+
+                        $("#tbody").html(dataHtml);
+
+
+                    },
+                    error:function(){ alert("실패"); }
+                });//ajax
+            });//takeBtn
+        });//jquery
+
+    </script>
+</head>
+<body>
+    <button type="button" id="takeBtn">데이터 가져오기</button>
+    <form action="#" method="get">
+        <label>번호</label>
+        <input type="text" id="sno" name="sno"><br>
+        <label>이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label>국어</label>
+        <input type="text" id="kor" name="kor"><br>
+        <label>영어</label>
+        <input type="text" id="eng" name="eng"><br>
+        <label>수학</label>
+        <input type="text" id="math" name="math" onkeyup="enterBtn(event)" ><br>
+        <button type="button" id="sbtn" onclick="saveBtn()" >성적저장</button>
+    </form>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>촬영일</th>
+            <th>촬영장소</th>
+            <th>작가</th>
+            <th>키워드</th>
+            <th>이미지</th>
+        </tr>
+        <tbody id="tbody">
+           
+            
+        </tbody>
+
+    </table>
+   
+   
+</body>
+</html>

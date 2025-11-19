@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script> <!--제이쿼리 쓸때 무조건 있어야함-->
+    <title>제이쿼리</title>
+    <script>
+        //제이쿼리 구문
+        $(function(){
+            //제이쿼리 이벤트 처리 - "동적처리" 이벤트 가능 _ 여러 기능 같이 넣기 가능 ex. click focus
+            /*
+            */
+            // on이벤트는 동적처리가능, 이벤트 종류를 여러개 사용가능
+            $(document).on("click","#btn",function(){ // event  // #btn을 찾아서 함수를 주겠다  // $(document)로 받아야 동적처리 가능  _뒤()안에 어디것 사용할지 작성
+                alert('111 확인');
+            });
+
+            // 이벤트처리 - "정적처리"만 가능 _ 2개 이벤트 사용은 불가능, 장점 : 길이가 짧음
+            $("#btn").click(function(){
+                alert("정적처리 이벤트 확인")
+            });
+            $("#btn").focus(function(){
+                alert("정적처리 이벤트 확인")
+            });
+
+        });
+        /*
+        //자바스크립트 이벤트처리
+        document.querySelector("#btn").addEventListener("click",function(){
+        });
+        */
+    </script>
+</head>
+<body>
+    <div>내용</div>
+    <div>내용2  </div>
+    <input type="text" name="id">
+    <input type="text" name="pw">
+    <button type="button">2번째</button>
+    <button type="button" id="btn">확인</button>
+</body>
+</html>
