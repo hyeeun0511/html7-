@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        #txt{border:1px solid black; width:300px; height:200px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#aBtn").click(function(){
+                console.log($(this).text());  //위와 동일한 내용임
+                console.log($("#aBtn").text());
+                let aBtn = $(this);
+                $("#txt").stop().fadeToggle(500,function(){  // toggle : 있으면 없게함, 없으면 있게함
+                    if(aBtn.text() == "나타남") aBtn.text("사라짐")  //글자가 바뀌게됨 펼침 -> 나타남/사라짐
+                    else aBtn.text("나타남");  // 한줄이라 중괄호 생략 가능
+                });
+            });
+
+            /*
+            $("#aBtn").click(function(){
+                //alert("확인")   ->창뜨는지 확인용도
+                $("#txt").stop().fadeIn(500,function(){     // fadeIn/fadeOut:천천히나타남,천천히사라짐  slideDown:에니메이션  slideDown(초(1000=1초),기능)  slideDown으로 1초동안 애니메이션 걸어줘
+                
+            });
+        });
+        $("#aBtn_no").click(function(){
+            $("#txt").stop().slideUp(1000,function(){});
+        })
+        
+        */
+    });//jquery
+    </script>
+</head>
+<body>
+
+    <button type="button" id="aBtn">펼침</button>  
+        <!--button type="button" : form안에서 걸었을때 영향력 있음-->
+    <!--<button type="button" id="aBtn_no">에니메이션 사라짐<button> -->
+    <br>
+    <div id="txt">
+        쿠팡이츠가 편의점과 손잡고 퀵커머스 판을 흔들고 있다. GS25에 이어 CU까지 입점하며, 업계 빅2를 모두 끌어안은 쿠팡이츠는 '장보기·쇼핑'으로 브랜드를 재정비하고 서비스 확대에 속도를 내고 있다. 물류 역량과 와우 멤버십을 앞세운 쿠팡의 공세로 배달의민족(배민)과 퀵커머스 주도권 경쟁도 한층 가열되는 분위기다.
+    </div>
+    
+</body>
+</html>

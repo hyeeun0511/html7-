@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        img{width:300px;}
+    </style>
+    <script>
+        $(function(){
+            $("#lBtn").click(function(){ //크기를 키우거나 줄이는 것->animate라 작성
+                $("img").animate({"width":"+=100px"},1000,function(){});  //+=100px대신 변수를 걸어도 가능  //클릭하면 100px씩 확대됨
+            });//click
+            $("#sBtn").click(function(){
+                $("img").animate({"width":"-=100px"},1000,function(){}); //클릭하면 100px씩 축소됨
+            });//click
+        });//jquery
+
+        /*
+        $(function(){
+            $("#hBtn").click(function(){
+                $("img").fadeIn(1000,function(){  //나타남 //img를 넣어야 사진이 나타나고 사라질수 있
+                
+            });
+        })
+        $("#hBtn_no").click(function(){
+            $("img").fadeOut(1000,function(){  //사라짐
+            
+            });
+        })
+        })
+*/
+    </script>
+</head>
+<body>
+    <button type ="button" id="lBtn">확대</button>
+    <button type ="button" id="sBtn">축소</button>
+    <br>
+    <img src="img/hana.jpg">
+    
+</body>
+</html>

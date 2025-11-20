@@ -1,127 +1,187 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VLAST Shop - 게시판</title>
-  <style>
-    *{padding:0; margin:0;}
-    .banner{width:100%}
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="css/style.css" rel="stylesheet" type="text/css" >  
-  <style>
-    
-  </style>
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>포레스트 리솜</title>
+    <style>
+        *{padding:0; margin:0;}
+        ol,ul{list-style: none;}
+        a{text-decoration: none; color: inherit;}
+        header{width:100%; height:121px;
+         border-bottom: 1px solid #f0f0f0;
+         
+        }
+        .menu{width:1290px; height:121px; margin:0 auto;
+            display: flex;
+            }
+        .logo{width:132px; height:121px; 
+            display: flex; align-items: center;
+        }
+        .logo img{width:132px; height:45px;}
+        nav{width: 1158px; height:121px;  }
+        .t_menu{height: 61px;  }
+        .t_menu ul{ height:61px; display: flex; justify-content: flex-end;
+          align-items: center; font-size: 12px; color:#8a8d8f;
+          font-weight: 400;
+        }
+        .t_menu ul li:after{
+            content:'|'; 
+            font-size: 10px; display: inline-block; color:#d3d3d3;
+            margin:0 13px;
+         }
+        .t_menu ul li:last-child:after{
+            content:''; 
+            margin:0 0 0 13px;
+        } 
+        .m_menu{height: 60px;  } 
+        .m_menu ul{ height:60px; display: flex; justify-content: flex-end;
+          align-items: center; font-size: 19px; color:#1d1d1d;
+          font-weight: 500; letter-spacing: -0.5px;
+        } 
+        .m_menu li{width:174px; height:60px; text-align: right;
+         line-height: 40px;
+        } 
+        .m_menu li:nth-child(2){width:130px;}
+        .m_menu li:nth-child(3){width:130px;}
+        .m_menu li a{display: inline-block; height:57px;}
+        .m_menu li a:hover{
+            border-bottom: 3px solid #718929;
+            color:#718929;
+        }
+        .slide_menu{width:100%; height:150px; background: #f0f0f0;
+            position: absolute; top:121px; left:0; z-index: 10;
+        }
+        /* banner menu */
+        .banner{width:100%; height:320px;
+            background: url('images/bg_topBg1_2.jpg');
+             
+        }
+        .slide_menu{display: block; }
+        .ul_menu{width:1290px; margin:0 auto; display: flex;
+           justify-content: flex-end; text-align: right;
+        }
+        .ul_menu .sm00{ width:174px;  }
+        .ul_menu .sm00:nth-child(2){width:130px;}
+        .ul_menu .sm00:nth-child(3){width:130px;}
+        .ul_menu .sm00 li{margin:5px 0 7px 0;}
+    </style>
+    <script>
+        $(function(){
+            $(".m_menu li").mouseover(function(){
+                $(".slide_menu").stop().slideDown();
+            });
+            $(".m_menu li").mouseout(function(){
+                $(".slide_menu").stop().slideUp();
+            });
+            $(".slide_menu").mouseover(function(){
+                $(".slide_menu").stop().slideDown();
+            });
+            $(".slide_menu").mouseout(function(){
+                $(".slide_menu").stop().slideUp();
+            });
+        })
+
+    </script>
 </head>
-
-
 <body>
-
-  <!-- Header -->
-  <div class="header">
-    <div class="top-menu">
-      <a href="#"><i class="fa-regular fa-chess-queen"></i> 회원가입</a> |
-      <a href="#">로그인</a> |
-      <a href="#">주문조회</a> |
-      <a href="#">최근본상품</a>
-    </div>
-    <div class="icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-user"></i>
-      <i class="fas fa-shopping-bag"></i>
-    </div>
-  </div>
-  <!-- nav -->
-  <nav>
-    <ul>
-      <li><a href="#">포레스트</a></li>
-      <li><a href="#">스파</a></li>
-      <li><a href="#">객실</a></li>
-      <li><a href="#">특별한 경험</a></li>
-      <li><a href="#">부대시설</a></li> 
-      <li><a href="#">브랜드소개</a></li>
-    </ul>
-  </nav>
-  <!-- banner -->
-  <div class="banner"></div>
-
-  <!-- Board List -->
-  <div class="board-container">
-    <div class="board-title">공지사항</div>
-    <table class="board-table">
-      <thead>
-        <tr>
-          <th>번호</th>
-          <th>제목</th>
-          <th>작성자</th>
-          <th>작성일</th>
-          <th>조회수</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>5</td>
-          <td class="title"><a href="#">[공지] 추석 연휴 배송 안내</a></td>
-          <td>관리자</td>
-          <td class="date">2025-09-05</td>
-          <td class="views">123</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td class="title"><a href="#">9월 신규 회원 이벤트 안내</a></td>
-          <td>운영팀</td>
-          <td class="date">2025-09-01</td>
-          <td class="views">98</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td class="title"><a href="#">[점검] 사이트 정기 점검 안내</a></td>
-          <td>관리자</td>
-          <td class="date">2025-08-28</td>
-          <td class="views">211</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td class="title"><a href="#">배송비 정책 변경 안내</a></td>
-          <td>관리자</td>
-          <td class="date">2025-08-20</td>
-          <td class="views">156</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td class="title"><a href="#">홈페이지 리뉴얼 오픈!</a></td>
-          <td>운영팀</td>
-          <td class="date">2025-08-10</td>
-          <td class="views">324</td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- Pagination & Search -->
-    <div class="board-footer" >
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">&raquo;</a>
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <img src="images/img_logo_re_forest.png">
+            </div>
+            <nav>
+                <div class="t_menu">
+                    <ul>
+                        <li>회원예약</li>
+                        <li>패키지 예약</li>
+                        <li>부대시설 예약</li>
+                        <li>회원가입</li>
+                        <li>로그인</li>
+                    </ul>
+                </div>
+                <div class="m_menu">
+                    <ul>
+                        <li><a href="#">포레스트</a></li>
+                        <li><a href="#">스파</a></li>
+                        <li><a href="#">객실</a></li>
+                        <li><a href="#">특별한 경험</a></li>
+                        <li><a href="#">부대시설</a></li>
+                        <li><a href="#">브랜드소개</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <div class="search-box">
-            <input type="text" placeholder="검색어 입력">
-            <button>검색</button>
+    </header>
+    <div class="slide_menu">
+        <div class="ul_menu">
+                <div class="sm00 sm_01">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
+                <div class="sm00 sm_02">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
+                <div class="sm00 sm_03">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
+                <div class="sm00 sm_04">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
+                <div class="sm00 sm_05">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
+                <div class="sm00 sm_06">
+                    <ul>
+                        <li>소개</li>
+                        <li>뉴스</li>
+                        <li>스토리</li>
+                        <li>오시는 길</li>
+                    </ul>
+                </div>
         </div>
     </div>
+    <!-- banner -->
+    <div class="banner"></div>
     
-  </div>
-
-
-  <!-- Footer -->
-  <footer>
-    Copyright © VLAST Shop. All rights reserved.
-  </footer>
-
 </body>
 </html>
+접기
+
+
+
+
+
+
+
+
+
+
+
+
+
