@@ -32,11 +32,11 @@
                         <tr>
                             <td>${data[i].sno}</td>
                             <td>${data[i].name}</td>
-                            <td>${data[0].kor}</td>
-                            <td>${data[0].eng}</td>
-                            <td>${data[0].math}</td>
-                            <td>${data[0].total}</td>
-                            <td>${data[0].avg}</td>
+                            <td>${data[i].kor}</td>
+                            <td>${data[i].eng}</td>
+                            <td>${data[i].math}</td>
+                            <td>${data[i].total}</td>
+                            <td>${data[i].avg}</td>
                             <td></td>
                         </tr>
                         `;
@@ -117,7 +117,7 @@
 </head>
 <body>
     <button type="button" id="takeBtn">데이터 가져오기</button>
-    <form action="#" method="get">
+    <form action="#" method="get">  <!--버튼을 눌렀을때 #으로 전달 : 지금으로서는 없어도 상관없지만 나중에 필요함-->
         <label>번호</label>
         <input type="text" id="sno" name="sno"><br>
         <label>이름</label>
