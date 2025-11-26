@@ -370,10 +370,10 @@ where hire_date between '2005/01/01' and '2007/12/31';
 -- 상품관리 테이블 작성
 --1. 테이블 생성
 create table product(
-product_id varchar2(100), -- 상품 고유번호
--- 상품명
--- 카테고리
--- 단가
+p_id varchar2(100),     -- 상품 고유번호
+p_name varchar2(20),    -- 상품명
+p_catal varchar2(100),  -- 카테고리
+p-- 단가
 -- 재고수량
 -- 사용여부 (Y,N)
 -- 등록일
