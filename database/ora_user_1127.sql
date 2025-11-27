@@ -1,5 +1,7 @@
--- 날짜함수 시간,오전오후 출력
+--- 날짜함수 시간,오전오후 출력
 select to_char(sdate,'yyyy-mm-dd am hh24:mi:ss') from stuscore order by sno desc;
+-- desc : 내림차순
+
 
 -- 날짜함수 : 사칙연산에서 +,-가능
 select sysdate from dual;  -- sysdate:현재날짜  /  dual:가상
@@ -45,10 +47,13 @@ select round(sysdate - bdate, 4) from board;
 select * from member;
 select * from board;
 
-select * from stuscore order by sno desc;
+select * from stuscore order by sno desc;  
+-- order by [정렬방향]  1)asc : 오름차순  2)desc : 내림차순
+ 
 
 -- 날짜함수 시간,오전오후 출력
 select to_char(sdate,'yyyy-mm-dd am hh24:mi:ss') from stuscore order by sno desc;
+             -- sdate : yyyymmdd
 
 insert into stuscore values(
 stuscore_seq.nextval,'이순신',80,81,88,80+81+88,(80+81+88)/3,sysdate
@@ -359,7 +364,7 @@ select length(name),length(name)-2 from member;
 
 -- 홍**,Luci**,Gregoi**
 select name from member;
-select name,rpad(substr(name,0,length(name)-2),length(name),'*') from member;
+select name,rpad(substr(name,0,length(name)-2),length(name),'*') as rpad from member;   -- as rpad(별칭_써도되고 안써도 됨) from member
 -- byte숫자에 의해 -> 국문의 경우 : length(name)+1해야 '홍**'으로 나옴
 select name,rpad(substr(name,0,7-2),7,'*') from member;
 -- 0에서 5(7-2)개 잘라오고 
