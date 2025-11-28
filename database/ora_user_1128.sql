@@ -647,7 +647,7 @@ where rnum between 1 and 10;  -- 불가능
 --= select row_number() over(order by bno asc) rnum,a.* from board2 a 를 테이블명으로 갖고와서 전체rnum나열후 번호추출해야함 
 
 
-select * from ( 테이블명 ) ;
+-- select * from ( 테이블명 ) ;
 select * from ( select row_number() over(order by bno asc) rnum,a.* from board2 a )
 where rnum between 11 and 20;
 ;
